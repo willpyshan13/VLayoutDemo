@@ -114,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
                     TitleAdapter stickyTitleAdapter = new TitleAdapter(this, singleLayoutHelper, modelName);
                     adapters.add(stickyTitleAdapter);
                 }
+            } else {
+                viewPool.setMaxRecycledViews(itemType++, 1);
+                StickyLayoutHelper stickyLayoutHelper = new StickyLayoutHelper();
+                StickyTitleAdapter stickyTitleAdapter = new StickyTitleAdapter(this, stickyLayoutHelper, modelName);
+                adapters.add(stickyTitleAdapter);
             }
 
             //========用来判断分组，展现不同的样式========
